@@ -24,4 +24,6 @@ public interface CustomList<T> {
 	 * @return The element that is stored inside of the <code>CustomList</code> at the given index
 	 */
 	T get(int index);
+
+	boolean add(int index, T item);
 }
