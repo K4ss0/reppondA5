@@ -49,4 +49,19 @@ public class CustomArrayList<T> implements CustomList<T> {
 		return (T) items[index];
 	}
 
+	public T remove(int index) {
+		if (index >= size || index < 0) {
+			throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+		}
+		@SuppressWarnings("unchecked")
+		T removedItem =(T) items[index];
+		
+		System.arraycopy(items, index + 1, items, index, size - index - 1);
+		
+		items[size - 1] = null;
+		
+		size--;
+		return removedItem;
+	}
+
 }
